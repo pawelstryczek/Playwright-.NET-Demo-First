@@ -1,4 +1,4 @@
-# Presentation possibility of using PLaywright in .Net environment
+# Playwright in .Net environment
 
 ## What you can find:
 1) Page object model apprach
