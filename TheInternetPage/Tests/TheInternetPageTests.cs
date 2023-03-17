@@ -1,5 +1,7 @@
 using NUnit.Framework;
+using static NUnit.Framework.TestContext;
 using TheInternetPage.PageObject;
+using FluentAssertions;
 
 namespace TheInternetPage.Tests;
 
@@ -10,27 +12,31 @@ public class TheInternetPageTests : TestBase
 {
     [Test]
     public void CheckmarkTest()
-    {
+	{
+        //Act
         var checkboxesPage = TheInternet
             .Open()
             .ClickCheckboxes()
             .SelectCheckboxOne()
             .UnSelectCheckboxTwo();
-        
-        Assert.That(checkboxesPage.IsCheckBoxOneSelected(), Is.True);
-        Assert.That(checkboxesPage.IsCheckBoxTwoSelected(), Is.False);
+
+        //Assertions
+        checkboxesPage.IsCheckBoxOneSelected().Should().BeTrue();
+        checkboxesPage.IsCheckBoxTwoSelected().Should().BeFalse();
     }
 
-    [Test]
+	[Test]
     public void LoginTest()
     {
+        //Act
         var SecureAreaPage = TheInternet
             .Open()
             .ClickFormAuthentication()
-            .EnterUsername("tomsmith")
-            .EnterPassword("SuperSecretPassword!")
+            .EnterUsername(username: Parameters.Get("username"))
+            .EnterPassword(password: Parameters.Get("password"))
             .ClickLogin();
 
-        StringAssert.Contains("You logged into a secure area!", SecureAreaPage.GetLoginStatus());
+        //Assertions
+        SecureAreaPage.GetLoginStatus().Should().Contain("You logged into a secure area!");
     }
 }

@@ -15,7 +15,6 @@ namespace TheInternetPage.Tests
         public void PageSetup()
         {
             Page = Context.NewPageAsync().Result;
-            Page.Context.ConfigureAwait(false);
             TheInternet = TheInternet.Initialize(Page);
         }    
     }

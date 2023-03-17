@@ -1,5 +1,5 @@
 ﻿using Microsoft.Playwright;
-using System.Runtime.CompilerServices;
+using static NUnit.Framework.TestContext;
 
 namespace TheInternetPage.PageObject
 {
@@ -22,7 +22,7 @@ namespace TheInternetPage.PageObject
 
         public TheInternet Open()
         {
-            _page.GotoAsync("http://localhost:7080/").Wait();
+            _page.GotoAsync(Parameters.Get("webAppUrl")).Wait();
             _checkboxLink.WaitForAsync(new() { State = WaitForSelectorState.Visible }).Wait();
             return this;
         }
