@@ -2,7 +2,7 @@
 
 namespace TheInternetPage.PageObject
 {
-    internal class CheckboxesPage
+    public class CheckboxesPage
     {
         private readonly IPage _page;
         private ILocator Header => _page.Locator("//h3[text()='Checkboxes']");

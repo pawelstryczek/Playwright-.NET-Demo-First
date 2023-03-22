@@ -3,7 +3,7 @@ using static NUnit.Framework.TestContext;
 
 namespace TheInternetPage.PageObject
 {
-    internal class TheInternet
+    public class TheInternet
     {
         private readonly IPage _page;
         private ILocator CheckboxLink => _page.Locator("a[href='/checkboxes']");

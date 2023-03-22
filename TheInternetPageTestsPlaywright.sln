@@ -5,11 +5,6 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheInternetPage", "TheInternetPage\TheInternetPage.csproj", "{4BAE1E18-6939-4504-BE75-7161D4E7E950}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A5C61A65-A001-4390-9290-B7237303936E}"
-	ProjectSection(SolutionItems) = preProject
-		.runsettings = .runsettings
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
