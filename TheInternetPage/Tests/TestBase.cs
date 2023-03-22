@@ -5,7 +5,7 @@ using TheInternetPage.PageObject;
 
 namespace TheInternetPage.Tests
 {
-    public class TestBase : ContextTest
+    public abstract class TestBase : ContextTest
     {
         public IPage Page { get; private set; } = null!;
 
@@ -16,6 +16,6 @@ namespace TheInternetPage.Tests
         {
             Page = Context.NewPageAsync().Result;
             TheInternet = TheInternet.Initialize(Page);
-        }    
+        }
     }
 }
